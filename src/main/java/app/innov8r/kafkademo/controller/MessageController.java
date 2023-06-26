@@ -20,7 +20,7 @@ public class MessageController {
 		this.kafkaProducer = kafkaProducer;
 	}
 	
-	@PostMapping("publish")
+	@PostMapping("/publish")
 	public ResponseEntity<String> publish(@RequestBody SendMessage message) {
 		
 		kafkaProducer.sendMessage(message.getMessage());
